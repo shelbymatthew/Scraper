@@ -59,7 +59,7 @@ app.get("/scrape", function (req, res) {
                 .children("a")
                 .attr("href")
                 
-            result.teaser = $(this).children("p .teaser, a").text();
+            result.teaser = $(this).children("p .teaser, a").text()
                 // .attr("class")
             
             console.log("children?:" +result.teaser)
