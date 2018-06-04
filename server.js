@@ -49,7 +49,7 @@ app.get("/scrape", function (req, res) {
         $("article h2").each(function (i, element) {
             // Save an empty result object
             var result = {};
-            console.log("children?:" + result.teaser)
+            
 
             // Add the text and href of every link, and save them as properties of the result object
             result.title = $(this)
@@ -57,10 +57,12 @@ app.get("/scrape", function (req, res) {
                 .text();
             result.link = $(this)
                 .children("a")
+                .attr("href")
                 
-            // result.teaser = $(this)
-            // .children("p")
-            // .attr("class, teaser")
+            result.teaser = $(this).children("p .teaser, a").text();
+                // .attr("class")
+            
+            console.log("children?:" +result.teaser)
 
             // .attr("href");
 
